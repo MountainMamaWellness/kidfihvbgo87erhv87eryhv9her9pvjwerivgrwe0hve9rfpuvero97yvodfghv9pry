@@ -1,0 +1,267 @@
+html, body {
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+    color:#fff;
+    cursor: url("images/candy-cane-cursor.png"), auto;
+    overflow-x: hidden;
+    background: #000; /* fallback */
+}
+
+/* Background */
+body {
+    background: url("images/starrysky.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.site-header {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 1rem 2rem;
+    background: rgba(0,0,0,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width:60px;
+    height:auto;
+}
+
+.site-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color:#ffe8d6;
+    text-shadow: 2px 2px 5px #000;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {text-shadow: 2px 2px 5px #000, 0 0 10px #ffe8d6;}
+    100% {text-shadow: 2px 2px 5px #000, 0 0 20px #ffdbc0;}
+}
+
+.hero-section {
+    text-align:center;
+    padding:4rem 2rem;
+    position: relative;
+}
+
+.hero-heading {
+    font-family:'Great Vibes', cursive;
+    font-size:3rem;
+    margin-bottom:1rem;
+    text-shadow:2px 2px 8px #000;
+    animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    0% {text-shadow:2px 2px 8px #fff, 0 0 5px #fff;}
+    100% {text-shadow:2px 2px 8px #006906, 0 0 15px #006906;}
+}
+
+.hero-subtext {
+    font-size:1.3rem;
+    max-width:600px;
+    margin:0 auto;
+    text-shadow:1px 1px 2px #000;
+    color:#006906;
+    line-height:1.5;
+}
+
+.ornaments {
+    margin-top:2rem;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    position:relative;
+}
+
+.ornament {
+    width:80px;
+    animation: sway 3s ease-in-out infinite alternate, ornamentGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+    0% {transform: rotate(-5deg);}
+    100% {transform: rotate(5deg);}
+}
+
+@keyframes ornamentGlow {
+    0% {filter: drop-shadow(0 0 0px red);}
+    100% {filter: drop-shadow(0 0 10px red);}
+}
+
+/* Santa Fly by */
+.santa-button {
+    margin-top:2rem;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.3);
+    padding:0.5rem 1rem;
+    border-radius:5px;
+    color:#fff;
+    cursor:pointer;
+    transition: background 0.3s;
+    font-size:1rem;
+}
+.santa-button:hover {
+    background:rgba(255,255,255,0.3);
+}
+
+.santa {
+    position:absolute;
+    top:10%;
+    left:-200px;
+    width:150px;
+    transition: transform 5s linear;
+    pointer-events:none;
+    opacity:0.9;
+}
+
+/* Christmas Tree on the side */
+.christmas-tree-container {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    z-index:10;
+}
+
+.christmas-tree {
+    width: 150px;
+    animation: treeSway 4s ease-in-out infinite alternate;
+}
+
+@keyframes treeSway {
+    0% {transform: rotate(-2deg) scale(1);}
+    100% {transform: rotate(2deg) scale(1.02);}
+}
+
+/* List Section */
+.list-section {
+    margin:2rem;
+    padding:2rem;
+    background: rgba(0,0,0,0.4);
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.3);
+    text-align:center;
+    position: relative;
+}
+
+.list-title {
+    font-family:'Great Vibes', cursive;
+    font-size:2.5rem;
+    margin-bottom:2rem;
+    color:#ffe8d6;
+    text-shadow:2px 2px 5px #000;
+}
+
+.wish-list {
+    list-style:none;
+    padding:0;
+    margin:0 auto;
+    max-width:500px;
+    text-align:left;
+}
+
+.wish-item {
+    font-size:1.4rem;
+    background:rgba(255,255,255,0.1);
+    margin:1rem 0;
+    padding:0.8rem 1rem;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.2);
+    text-shadow:1px 1px 2px #000;
+    transition: transform 0.3s, background 0.3s;
+    color:#ffe8d6;
+    perspective: 500px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    gap:1rem;
+}
+
+.item-text {
+    cursor:pointer;
+    flex-grow:1;
+}
+
+.wish-item:hover {
+    background:rgba(255,255,255,0.2);
+    transform: rotateY(5deg) scale(1.02);
+}
+
+/* Completed style: no green check/strikethrough, just a glow */
+.wish-item.completed {
+    box-shadow: 0 0 10px #006906;
+    background: #006906;
+    transform: scale(1.05);
+}
+
+.item-link {
+    background:rgba(255,255,255,0.1);
+    padding:0.3rem 0.6rem;
+    border-radius:5px;
+    color:#fff;
+    text-decoration:none;
+    font-size:0.9rem;
+    border:1px solid rgba(255,255,255,0.3);
+    transition:background 0.3s, transform 0.3s;
+}
+.item-link:hover {
+    background:rgba(255,255,255,0.3);
+    transform:scale(1.05);
+}
+
+.hint {
+    color:#ffe2c9;
+    text-shadow:1px 1px 2px #000;
+    margin-top:1rem;
+    font-size:1rem;
+}
+
+/* Footer */
+.site-footer {
+    text-align:center;
+    padding:1rem;
+    font-size:0.9rem;
+    background:rgba(0,0,0,0.5);
+    border-top:2px solid rgba(255,255,255,0.3);
+}
+
+/* Confetti */
+/* We'll create confetti dynamically in JS with random colors. */
+.confetti-particle {
+    position:absolute;
+    width:10px;
+    height:10px;
+    background: red;
+    border-radius: 50%;
+    pointer-events:none;
+    animation: explodeConfetti 1s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes explodeConfetti {
+    0% { transform: translate(0,0) scale(0.5); opacity:1; }
+    100% { transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(1); opacity:0; }
+}
+
+/* Responsive */
+@media(max-width:600px) {
+    .hero-heading { font-size:2.2rem; }
+    .site-title { font-size:2rem; }
+    .wish-item { font-size:1.2rem; }
+    .christmas-tree {
+        width: 100px;
+    }
+    .christmas-tree-container {
+        right: 5%;
+    }
+}
